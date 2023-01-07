@@ -1,0 +1,194 @@
+{
+    "stocks": [
+        {
+            "id": "T001",
+            "name": "TEST 001",
+            "description": "A test company number 1",
+            "cost": 120.0,
+            "minCost": 50.0,
+            "industry": "Entertainment",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "T002",
+            "name": "TEST 002",
+            "description": "A test company number 2",
+            "cost": 220.0,
+            "minCost": 30.0,
+            "industry": "Entertainment",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "T003",
+            "name": "TEST 003",
+            "description": "A test company number 3",
+            "cost": 60.0,
+            "minCost": 20.0,
+            "industry": "Food",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "T004",
+            "name": "TEST 004",
+            "description": "A test company number 4",
+            "cost": 340.0,
+            "minCost": 70.0,
+            "industry": "Food",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "T005",
+            "name": "TEST 005",
+            "description": "A test company number 5",
+            "cost": 120.0,
+            "minCost": 50.0,
+            "industry": "Chemical",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "T006",
+            "name": "TEST 006",
+            "description": "A test company number 6",
+            "cost": 240.0,
+            "minCost": 10.0,
+            "industry": "Chemical",
+            "events": [
+                {
+                    "id": 0,
+                    "name": "Good",
+                    "description": "chill",
+                    "rep": 3
+                },
+                {
+                    "id": 1,
+                    "name": "Bad",
+                    "description": "no chill",
+                    "rep": -3
+                }
+            ]
+        },
+        {
+            "id": "GOLD",
+            "name": "Gold",
+            "description": "GOLDEN HIIIIILLLLS",
+            "cost": 60.0,
+            "minCost": 60.0,
+            "industry": "Gold"
+        }
+    ],
+    "events": [
+        {
+            "id": 0,
+            "name": "entertainment good",
+            "description": "entertainment very good",
+            "influence": "Entertainment",
+            "rep": 5,
+            "othersRep": -2
+        },
+        {
+            "id": 1,
+            "name": "entertainment bad",
+            "description": "entertainment very bad",
+            "influence": "Entertainment",
+            "rep": -5,
+            "othersRep": 2
+        },
+        {
+            "id": 2,
+            "name": "food good",
+            "description": "food very good",
+            "influence": "Food",
+            "rep": 5,
+            "othersRep": -2
+        },
+        {
+            "id": 3,
+            "name": "food bad",
+            "description": "food very bad",
+            "influence": "Food",
+            "rep": -5,
+            "othersRep": 2
+        },
+        {
+            "id": 4,
+            "name": "chemical good",
+            "description": "chemical very good",
+            "influence": "Chemical",
+            "rep": 5,
+            "othersRep": -2
+        },
+        {
+            "id": 5,
+            "name": "chemical bad",
+            "description": "chemical very bad",
+            "influence": "Chemical",
+            "rep": -5,
+            "othersRep": 2
+        }
+    ]
+}
