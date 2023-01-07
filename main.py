@@ -8,7 +8,7 @@ app = f.Flask(__name__)
 
 # let cookies = JSON.parse(atob(document.cookie.split('userData=')[1].replaceAll('"', '').replaceAll('\\', '')))
 # document.cookie = `userData=${btoa(JSON.stringify(cookies))}`
-
+#WOOOHOO
 
 @app.route('/')
 def main():
