@@ -7,7 +7,7 @@ from userProcessing import User
 app = f.Flask(__name__)
 
 # let cookies = JSON.parse(atob(document.cookie.split('userData=')[1].replaceAll('"', '').replaceAll('\\', '')))
-# document.cookie = `userData=${btoa(JSON.stringify(cookies))}`
+# document.cookie = `userData=${btoa(JSON.stringify(cookies))}` 
 
 @app.route('/')
 def main():

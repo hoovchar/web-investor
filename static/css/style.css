@@ -1,3 +1,32 @@
 body {
   background-color: rgb(247, 247, 247);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  margin: 1%;
+  margin-top: 0px;
+}
+
+.nameday {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 200%;
+  font-stretch: expanded;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+}
+
+.day {
+  text-align: right;
+}
+
+div.game {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 1fr;
+  column-gap: 2%;
+}
+
+.tab {
+  background-color: #eee;
+  border-radius: 0.5vw;
+  
 }
