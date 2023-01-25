@@ -32,6 +32,7 @@ div.game {
   background-color: rgb(46, 46, 46);
   display: block;
   padding: 19px;
+  margin-bottom: 2%;
 }
 
 .companies-title {
@@ -43,7 +44,6 @@ div.game {
   height: 8%;
   text-align: center;
   padding-top: 5%;
-  margin-top: 5%;
   margin-bottom: 0px;
 }
 
@@ -83,4 +83,28 @@ div.game {
   background-color: rgb(240, 240, 240);
   border-radius: 20px;
   padding: 5%;
+}
+
+.stocks-buysell {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 17.6%;
+  background-color: rgb(240, 240, 240);
+  padding: 1%;
+  border-radius: 20px;
+  margin-top: 1.8%;
+}
+
+.your-stocks {
+  background-color: rgb(240, 240, 240);
+  overflow-y: scroll;
+}
+
+.step {
+  background-color: rgb(240, 240, 240);
+  font-size: 350%;
+  text-align: center;
+  padding: 8.5%;
+  margin-top: 5.5%;
+  border-radius: 20px;
 }
