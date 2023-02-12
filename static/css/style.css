@@ -120,6 +120,7 @@ body {
   margin: auto;
   margin-top: auto;
   margin-bottom: auto;
+  overflow-y: scroll;
 }
 
 .titlebar {
@@ -154,13 +155,13 @@ body {
 
 .first {
   display: grid;
-  grid-template-rows: 1fr 10fr 2fr;
+  grid-template-rows: 0.5fr 60vh 2fr;
   row-gap: 1vh;
 }
 
 .second {
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 3fr 20vh;
   row-gap: 1vh;
 }
 
@@ -196,4 +197,35 @@ body {
   font-size: 200%;
   margin: 0px 0px 0px 0px;
   padding: 1.5vh;
+}
+
+.companies-list {
+  overflow-y: scroll;
+  height: 1fr;
+}
+
+.sabpr {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.button {
+  padding: 1.5vh;
+  font-size: 250%;
+  color: rgb(189, 104, 245);
+  text-align: center;
+  font-weight: 900;
+  background-color: rgb(50, 50, 50);
+  border-radius: 1vh;
+  margin: 0.5vh 0px 0.5vh 0px;
+}
+
+.bottom-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1vw;
+}
+
+.stocks {
+  overflow-y: scroll;
 }
