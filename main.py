@@ -43,32 +43,51 @@ def main():
 
 @app.route('/api')
 def api():
+    # command = f.request.args.get('c')
+
+    # # get stock data
+    # if command == 'info':
+    #     id = f.request.args.get('id')
+
+    #     with open('defaults/stocks.json', 'r') as file:
+    #         data = json.loads(file.read())
+
+    #     stock = {}
+    #     for i in data['stocks']:
+    #         if id == i['id']:
+    #             stock = i
+    #             break
+
+    #     if stock == {}:
+    #         return '404'
+
+    #     data = {
+    #         'name': stock['name'],
+    #         'desc': stock['description'],
+    #         'industry': stock['industry']
+    #     }
+
+    #     return f.jsonify(data)
+    
     command = f.request.args.get('c')
-
-    # get stock data
-    if command == 'info':
-        id = f.request.args.get('id')
-
-        with open('defaults/stocks.json', 'r') as file:
-            data = json.loads(file.read())
-
-        stock = {}
-        for i in data['stocks']:
-            if id == i['id']:
-                stock = i
-                break
-
-        if stock == {}:
-            return '404'
-
-        data = {
-            'name': stock['name'],
-            'desc': stock['description'],
-            'industry': stock['industry']
+    
+    if command == 'stocks':
+        result = {
+            'stocks': []
         }
-
-        return f.jsonify(data)
-
+        
+        stocks = User.getDefaultStocks()['stocks']
+        for stock in stocks:
+            stock_formatted = {
+                'id': stock['id'],
+                'name': stock['name'],
+                'desc': stock['description'],
+                'ind': stock['industry']
+            }
+            
+            result['stocks'].append(stock_formatted)
+        
+        return f.jsonify(result)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 8080)
