@@ -138,7 +138,8 @@
             "description": "GOLDEN HIIIIILLLLS",
             "cost": 60.0,
             "minCost": 60.0,
-            "industry": "Gold"
+            "industry": "Gold",
+            "events": []
         }
     ],
     "events": [

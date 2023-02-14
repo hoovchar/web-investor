@@ -282,3 +282,8 @@ body {
   margin: 1% 20% 1% 20% 1%;
   text-align: center;
 }
+
+.news-list {
+  overflow-y: scroll;
+  height: 68vh;
+}

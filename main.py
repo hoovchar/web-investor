@@ -88,6 +88,30 @@ def api():
             result['stocks'].append(stock_formatted)
         
         return f.jsonify(result)
+    
+    if command == 'news':
+        result = {
+            
+        }
+        
+        stocks = User.getDefaultStocks()['stocks']
+        
+        for stock in stocks:
+            result[stock['id']] = {}
+            for new in stock['events']:
+                # result[stock['id']].append(
+                #     {
+                #         'id': new['id'],
+                #         'name': new['name'],
+                #         'desc': new['description']
+                #     }
+                # )
+                result[stock['id']][new['id']] = {
+                    'name': new['name'],
+                    'desc': new['description']
+                }
+        
+        return f.jsonify(result)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 8080)
