@@ -43,31 +43,6 @@ def main():
 
 @app.route('/api')
 def api():
-    # command = f.request.args.get('c')
-
-    # # get stock data
-    # if command == 'info':
-    #     id = f.request.args.get('id')
-
-    #     with open('defaults/stocks.json', 'r') as file:
-    #         data = json.loads(file.read())
-
-    #     stock = {}
-    #     for i in data['stocks']:
-    #         if id == i['id']:
-    #             stock = i
-    #             break
-
-    #     if stock == {}:
-    #         return '404'
-
-    #     data = {
-    #         'name': stock['name'],
-    #         'desc': stock['description'],
-    #         'industry': stock['industry']
-    #     }
-
-    #     return f.jsonify(data)
     
     command = f.request.args.get('c')
     
