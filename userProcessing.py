@@ -94,6 +94,14 @@ class User:
                 stock['evs'].append([event['id'], 1])
 
                 stock['rep'] += event['rep']
+                
+            else:
+                newevs = []
+                
+                for ev in stock['evs']:
+                    newevs.append( [ev[0], 0] )
+                
+                stock['evs'] = newevs
 
     def updateGlobalEvents(self):
         if r.randint(1, 33) == 1:
@@ -112,6 +120,14 @@ class User:
                     stock['rep'] += event['rep']
                 else:
                     stock['rep'] += event['othersRep']
+        
+        else:
+            newevs = []
+            
+            for ev in self.userData['events']:
+                newevs.append( [ev[0], 0] )
+            
+            self.userData['events'] = newevs
 
     def updateActions(self):
         for action in self.userData['actions']:

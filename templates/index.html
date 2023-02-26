@@ -29,9 +29,7 @@
         </div>
         <div class="companies col-item">
           <p class="companies-title">Компании</p>
-          <div class="companies-list" id="companies">
-
-          </div>
+          <div class="companies-list" id="companies"></div>
         </div>
         <div class="sabpr">
           <div class="button">Саботаж</div>
@@ -39,11 +37,11 @@
         </div>
       </div>
       <div class="second col">
-        <p class="col-item">a</p>
+        <div>
+          <canvas id="myChart" class="col-item"></canvas>
+        </div>
         <div class="bottom-bar col-item">
-          <div class="stocks" id="stocks">
-
-          </div>
+          <div class="stocks" id="stocks"></div>
           <div class="sabpr">
             <p class="button">Купить</p>
             <p class="button">Продать</p>
@@ -54,15 +52,14 @@
       <div class="third col">
         <div class="companies col-item">
           <div class="companies-title">Новости</div>
-          <div class="news-list" id="news">
-
-          </div>
+          <div class="news-list" id="news"></div>
         </div>
         <p class="button" id="step">ХОД</p>
       </div>
     </div>
     <script>
-      update()
+      update();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

@@ -7,16 +7,22 @@ function setCookie(cookies) {
     document.cookie = `userData=${btoa(JSON.stringify(cookies))}`
 }
 
+function select(id) {
+    
+}
+
 async function update() {
     let compList = document.getElementById('companies')
     let newsList = document.getElementById('news')
     let investments = document.getElementById('stocks')
     let userData = getCookie()
-    console.log(userData)
     let stocks = await fetch('/api?c=stocks')
     let events = await fetch('/api?c=news')
     stocks = await stocks.json()
     events = await events.json()
+
+    console.log(userData)
+    console.log(events)
 
 
     document.getElementById('day').innerText = `${userData['stp']} день`
@@ -42,16 +48,32 @@ async function update() {
 
         for (event_ of stock['evs']) {
             document.getElementById('news').innerHTML += `
-            <p class="event-title">${events[ stock['i'] ][ event_[0] ][ 'name' ]}</p>
-            <p class="event-desc"></p>
-            `
+            <div class="event-${event_[1]}">
+                <div class="event-header">
+                    <p class="event-title">${events[ stock['i'] ][ event_[0] ][ 'name' ]}</p>
+                    <p class="company-id">${stock['i']}</p>
+                </div>
+                <p class="company-desc">${events[ stock['i'] ][ event_[0] ][ 'desc' ] }</p>
+            </div>`
         }
+    }
 
-        
+    for (event_ of userData['events']) {
+        document.getElementById('news').innerHTML += `
+        <div class="event-${event_[1]} global-event">
+            <div class="event-header">
+                <p class="event-title">${events[ event_[0] ]['name']}</p>
+                <p class="company-id">ГЛОБАЛЬНОЕ</p>
+            </div>
+            <p class="company-desc">${events[event_[0]][ 'desc' ] }</p>
+        </div>`
     }
 
     document.getElementById('step').onclick = function() {
         setCookie(userData);
         window.location.href = '/?c=update'
     }
+
+
+    select(userData['stocks'][0]['i'])
 }

@@ -174,3 +174,28 @@ body {
   overflow-y: scroll;
   height: 68vh;
 }
+
+.event-0 {
+  border-radius: 1vh;
+  margin: 1%;
+  padding: 2%;
+  background-color: rgb(224, 224, 224);
+}
+
+.event-1 {
+  border-radius: 1vh;
+  margin: 1%;
+  padding: 2%;
+  background-color: rgb(255, 241, 160);
+}
+
+.event-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 1%;
+}
+
+/* .event-desc {
+  margin-top: 1%;
+  padding-top: 2%;
+} */

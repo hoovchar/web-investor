@@ -69,22 +69,22 @@ def api():
             
         }
         
-        stocks = User.getDefaultStocks()['stocks']
+        data = User.getDefaultStocks()
+        stocks = data['stocks']
         
         for stock in stocks:
             result[stock['id']] = {}
             for new in stock['events']:
-                # result[stock['id']].append(
-                #     {
-                #         'id': new['id'],
-                #         'name': new['name'],
-                #         'desc': new['description']
-                #     }
-                # )
                 result[stock['id']][new['id']] = {
                     'name': new['name'],
                     'desc': new['description']
                 }
+        
+        for ev in data['events']:
+            result[str(ev['id'])] = {
+                'name': ev['name'],
+                'desc': ev['description']
+            }
         
         return f.jsonify(result)
 
