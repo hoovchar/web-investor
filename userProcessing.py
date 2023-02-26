@@ -213,6 +213,7 @@ class User:
                         'i': stock['id'],
                         "cost": [stock['cost']],
                         "own": 0,
+                        'evs': []
                     }
                 )
 

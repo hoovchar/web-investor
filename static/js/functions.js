@@ -49,4 +49,9 @@ async function update() {
 
         
     }
+
+    document.getElementById('step').onclick = function() {
+        setCookie(userData);
+        window.location.href = '/?c=update'
+    }
 }
