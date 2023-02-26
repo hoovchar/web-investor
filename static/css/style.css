@@ -195,7 +195,13 @@ body {
   margin-bottom: 1%;
 }
 
-/* .event-desc {
-  margin-top: 1%;
-  padding-top: 2%;
-} */
+.chart-name {
+  text-align: center;
+  border-radius: 1vh;
+  background-color: rgb(206, 255, 160);
+  padding: 1%;
+  margin: 2vh 20vw 2vh 20vw;
+  font-size: 150%;
+  border: solid;
+  border-color: black;
+}

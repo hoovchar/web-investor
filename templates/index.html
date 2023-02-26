@@ -12,7 +12,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/css/style.css" />
-    <script src="/static/js/functions.js"></script>
   </head>
 
   <body>
@@ -37,8 +36,11 @@
         </div>
       </div>
       <div class="second col">
-        <div>
-          <canvas id="myChart" class="col-item"></canvas>
+        <div class="chart col-item">
+          <p class="chart-name" id="chart-name"></p>
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
         </div>
         <div class="bottom-bar col-item">
           <div class="stocks" id="stocks"></div>
@@ -57,9 +59,10 @@
         <p class="button" id="step">ХОД</p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/functions.js"></script>
     <script>
       update();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
