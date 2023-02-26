@@ -96,7 +96,12 @@ async function update() {
 
     for (stock of userData['stocks']) {
         if (stock['own'] > 0) {
-            investments.innerHTML += `<div class="stock" id="stock-${stock['i']}" onclick="select('${stock['i']}')">${stock['i']} -> ${stock['own']}</div>`
+            // investments.innerHTML += `<div class="stock" id="stock-${stock['i']}" onclick="select('${stock['i']}')">${stock['i']} -> ${stock['own']}</div>`
+            investments.innerHTML += `
+            <div class="bought-stock" onclick="select('${stock['i']}')">
+                <p class="stock-id">${stock['i']}</p>
+                <p class="company-id">Куплено: ${stock['own']}</p>
+            </div>`
         }
 
         document.getElementById(`comp-${stock['i']}`).innerText += ` | ${stock['cost'][stock['cost'].length - 1]} $`

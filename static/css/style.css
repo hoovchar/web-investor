@@ -205,3 +205,22 @@ body {
   border: solid;
   border-color: black;
 }
+
+.chart {
+  width: 56vw;
+  margin: 0px auto 0px auto;
+}
+
+.bought-stock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 1%;
+  padding: 2%;
+  background-color: rgb(243, 255, 233);
+  border-radius: 1vh;
+}
+
+.stock-id {
+  margin: 1vh auto 1vh auto;
+}
