@@ -168,34 +168,34 @@ class User:
                                 except KeyError:
                                     pass
 
-            if id == 'sb':
-                industry = User.getDefaultStockByID(value)['industry']
-                if self.userData['gold'] >= 50:
-                    for stock in self.userData['stocks']:
-                        print(f'for {stock["i"]}')
+            # if id == 'sb':
+            #     industry = User.getDefaultStockByID(value)['industry']
+            #     if self.userData['gold'] >= 50:
+            #         for stock in self.userData['stocks']:
+            #             print(f'for {stock["i"]}')
 
-                        if stock['i'] == value:
-                            stock['rep'] += -8
-                            continue
+            #             if stock['i'] == value:
+            #                 stock['rep'] += -8
+            #                 continue
 
-                        if User.getDefaultStockByID(stock['i'])['industry'] == industry:
-                            stock['rep'] += 2
+            #             if User.getDefaultStockByID(stock['i'])['industry'] == industry:
+            #                 stock['rep'] += 2
 
-                    self.userData['gold'] += -50
+            #         self.userData['gold'] += -50
 
-            if id == 'pr':
-                industry = User.getDefaultStockByID(value)['industry']
-                if self.userData['gold'] >= 50:
-                    for stock in self.userData['stocks']:
+            # if id == 'pr':
+            #     industry = User.getDefaultStockByID(value)['industry']
+            #     if self.userData['gold'] >= 50:
+            #         for stock in self.userData['stocks']:
 
-                        if stock['i'] == value:
-                            stock['rep'] += 4
-                            continue
+            #             if stock['i'] == value:
+            #                 stock['rep'] += 4
+            #                 continue
 
-                        if User.getDefaultStockByID(stock['i'])['industry'] == industry:
-                            stock['rep'] += -2
+            #             if User.getDefaultStockByID(stock['i'])['industry'] == industry:
+            #                 stock['rep'] += -2
 
-                    self.userData['gold'] += -50
+            #         self.userData['gold'] += -50
 
         while len(self.userData['actions']) > 0:
             del self.userData['actions'][0]
@@ -207,8 +207,7 @@ class User:
 
         uData = {
             'stp': 1,
-            'mny': 100000000000000,
-            'gold': 100000000000000,
+            'mny': 10000,
             'actions': [],
             'events': [],
             'stocks': [],
@@ -220,7 +219,7 @@ class User:
                     'i': stock['id'],
                     "cost": [stock['cost']],
                     "rep": r.randint(-3, 3),
-                    "own": uData['gold'] if stock['id'] == 'GOLD' else 0,
+                    "own": 0,
                     "evs": []
                 }
             )
