@@ -1,6 +1,7 @@
 let ctx = document.getElementById('myChart');
 let userData = getCookie()
 let step = userData['stp']
+let selected = ''
 
 let chart = new Chart(ctx, {
     type: 'line',
@@ -32,6 +33,7 @@ function setCookie(cookies) {
 
 function select(id) {
     console.log(id)
+    selected = id
     
     for (stock of userData['stocks']) {
         if (stock['i'] == id) {
@@ -64,10 +66,35 @@ function select(id) {
     document.getElementById('chart-name').innerText = id
 }
 
+function add_action(action, arg = 0) {
+    result = {}
+
+    result.k = action
+    result.v = selected
+    
+    if (arg != 0) {
+        result.a = arg
+    }
+
+    userData['actions'].push(result)
+}
+
+function counter(n) {
+    let counter = document.getElementById('counter')
+    let counter_num = Number( counter.innerText )
+
+    counter.innerText = counter_num + n
+
+    if (counter.innerText == '-1') {
+        counter.innerText = '0'
+    }
+}
+
 async function update() {
     let compList = document.getElementById('companies')
     let newsList = document.getElementById('news')
     let investments = document.getElementById('stocks')
+    let acmen = document.getElementById('acmen')
     // let userData = getCookie()
 
     let stocks = await fetch('/api?c=stocks')
@@ -79,7 +106,7 @@ async function update() {
     console.log(events)
 
 
-    document.getElementById('day').innerText = `${userData['stp']} день`
+    document.getElementById('day').innerText = `Ход ${userData['stp']}`
     document.getElementById('money').innerText = `${userData['mny']} $`
 
     for (stock of stocks['stocks']) {
@@ -101,6 +128,7 @@ async function update() {
             <div class="bought-stock" onclick="select('${stock['i']}')">
                 <p class="stock-id">${stock['i']}</p>
                 <p class="company-id">Куплено: ${stock['own']}</p>
+                <p class="company-id">Прибыль: ${(stock['cost'][stock['cost'].length - 1] - stock['p']).toFixed(2)} $</p>
             </div>`
         }
 
@@ -132,6 +160,48 @@ async function update() {
     document.getElementById('step').onclick = function() {
         setCookie(userData);
         window.location.href = '/?c=update'
+    }
+
+    document.getElementById('buy').onclick = function() {
+        acmen.innerHTML = `
+        <p class="action-title">Купить</p>
+        <div class="action-counter">
+            <p class="sub" id="sub" onclick="counter(-1)">-</p>
+            <p class="counter" id="counter">1</p>
+            <p class="add" id="add" onclick="counter(1)">+</p>
+        </div>
+        <div class="ok-status">
+            <p class="ok" id="ok">Выполнить</p>
+            <p class="action-status" id="status">--------</p>
+        </div>`
+
+        document.getElementById('ok').onclick = async function() {
+            add_action('buy', Number(document.getElementById('counter').innerText))
+            document.getElementById('status').innerText = 'Выполнено'
+            await new Promise(r => setTimeout(r, 1000))
+            document.getElementById('status').innerText = '--------'
+        }
+    }
+
+    document.getElementById('sell').onclick = function() {
+        acmen.innerHTML = `
+        <p class="action-title">Продать</p>
+        <div class="action-counter">
+            <p class="sub" id="sub" onclick="counter(-1)">-</p>
+            <p class="counter" id="counter">1</p>
+            <p class="add" id="add" onclick="counter(1)">+</p>
+        </div>
+        <div class="ok-status">
+            <p class="ok" id="ok">Выполнить</p>
+            <p class="action-status" id="status">--------</p>
+        </div>`
+
+        document.getElementById('ok').onclick = async function() {
+            add_action('sell', Number(document.getElementById('counter').innerText))
+            document.getElementById('status').innerText = 'Выполнено'
+            await new Promise(r => setTimeout(r, 1000))
+            document.getElementById('status').innerText = '--------'
+        }
     }
 
 

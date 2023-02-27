@@ -137,13 +137,15 @@ class User:
 
             if id == 'buy':
                 arg = action['a']
+                
                 for stock in self.userData['stocks']:
                     if stock['i'] == value:
+                        
                         for i in range(arg):
                             if self.userData['mny'] >= stock['cost'][-1]:
                                 self.userData['mny'] = float(
                                     Decimal(str(self.userData['mny'])) - Decimal(str(stock['cost'][-1])))
-
+                                
                                 if stock['own'] == 0:
                                     stock['p'] = stock['cost'][-1]
                                     stock['own'] += 1
@@ -168,7 +170,7 @@ class User:
 
             if id == 'sb':
                 industry = User.getDefaultStockByID(value)['industry']
-                if self.userData['gold'] >= 150:
+                if self.userData['gold'] >= 50:
                     for stock in self.userData['stocks']:
                         print(f'for {stock["i"]}')
 
@@ -179,11 +181,11 @@ class User:
                         if User.getDefaultStockByID(stock['i'])['industry'] == industry:
                             stock['rep'] += 2
 
-                    self.userData['gold'] += -150
+                    self.userData['gold'] += -50
 
             if id == 'pr':
                 industry = User.getDefaultStockByID(value)['industry']
-                if self.userData['gold'] >= 150:
+                if self.userData['gold'] >= 50:
                     for stock in self.userData['stocks']:
 
                         if stock['i'] == value:
@@ -193,7 +195,7 @@ class User:
                         if User.getDefaultStockByID(stock['i'])['industry'] == industry:
                             stock['rep'] += -2
 
-                    self.userData['gold'] += -150
+                    self.userData['gold'] += -50
 
         while len(self.userData['actions']) > 0:
             del self.userData['actions'][0]
@@ -213,25 +215,15 @@ class User:
         }
 
         for stock in dStocks['stocks']:
-            if stock['id'] != 'GOLD': 
-                uData['stocks'].append(
-                    {
-                        'i': stock['id'],
-                        "cost": [stock['cost']],
-                        "rep": r.randint(-3, 3),
-                        "own": 0,
-                        "evs": []
-                    }
-                )
-            else:
-                uData['stocks'].append(
-                    {
-                        'i': stock['id'],
-                        "cost": [stock['cost']],
-                        "own": 0,
-                        'evs': []
-                    }
-                )
+            uData['stocks'].append(
+                {
+                    'i': stock['id'],
+                    "cost": [stock['cost']],
+                    "rep": r.randint(-3, 3),
+                    "own": uData['gold'] if stock['id'] == 'GOLD' else 0,
+                    "evs": []
+                }
+            )
 
         return b64.b64encode(json.dumps(uData).encode()).decode()
 

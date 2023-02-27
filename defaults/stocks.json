@@ -131,15 +131,6 @@
                     "rep": -3
                 }
             ]
-        },
-        {
-            "id": "GOLD",
-            "name": "Gold",
-            "description": "GOLDEN HIIIIILLLLS",
-            "cost": 60.0,
-            "minCost": 60.0,
-            "industry": "Gold",
-            "events": []
         }
     ],
     "events": [

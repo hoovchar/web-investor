@@ -78,7 +78,7 @@ body {
 
 .companies {
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 1fr 10fr;
 }
 
 .companies-title {
@@ -94,7 +94,7 @@ body {
 
 .companies-list {
   overflow-y: scroll;
-  height: 1fr;
+  height: 75vh;
 }
 
 .sabpr {
@@ -213,7 +213,7 @@ body {
 
 .bought-stock {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
   align-items: center;
   margin: 1%;
   padding: 2%;
@@ -223,4 +223,58 @@ body {
 
 .stock-id {
   margin: 1vh auto 1vh auto;
+}
+
+.action-title {
+  text-align: center;
+  background-color: rgb(220, 220, 220);
+  border-radius: 1vh;
+  font-size: 140%;
+}
+
+.action-counter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0.5vh;
+}
+
+.sub {
+  text-align: center;
+  background-color: rgb(255, 128, 128);
+  color: white;
+  font-size: 200%;
+  border: solid;
+  border-color: black;
+  border-radius: 1vh;
+  margin: 1%;
+}
+
+.counter {
+  text-align: center;
+}
+
+.add {
+  text-align: center;
+  background-color: rgb(149, 255, 128);
+  color: white;
+  font-size: 200%;
+  border: solid;
+  border-color: black;
+  border-radius: 1vh;
+  margin: 1%;
+}
+
+.ok-status {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ok {
+  text-align: center;
+}
+
+.action-status {
+  text-align: center;
 }
